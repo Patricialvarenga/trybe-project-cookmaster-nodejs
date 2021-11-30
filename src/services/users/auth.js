@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const users = require('../../models/document')('users');
 
 // chave secreta. É com ela que os dados do usuário serão encriptados.
-const secret = 'mysecret';
+const secret = 'mySecret';
 
 const errosSituations = {
   invalidEntries: { err: {
