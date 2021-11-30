@@ -6,6 +6,8 @@ function setStatus(code) {
       return statusCodes.badRequest;
     case 'email_already_exists':
       return statusCodes.conflict;
+    case 'unauthorized':
+      return statusCodes.unauthorized;
     default:
   }
 }
