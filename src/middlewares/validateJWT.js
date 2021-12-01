@@ -4,6 +4,10 @@ const secret = 'mySecret';
 
 module.exports = async (req, _res, next) => {
   const { authorization: token } = req.headers;
+  
+  if (!token) {
+    return next({ err: { message: 'missing auth token', code: 'unauthorized' } });
+  }
 
   try {
     const { data } = jwt.verify(token, secret);
